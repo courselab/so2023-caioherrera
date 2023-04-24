@@ -22,6 +22,11 @@ bootloader.bin : %.bin : %.o
 bootloader.o : %.o : %.S
 	as --32 $< -o $@
 
+run :
+	make clean
+	make bootloader.o
+	make bootloader.bin
+	qemu-system-i386 -drive format=raw,file=bootloader.bin -net none
 
 .PHONY: clean
 
