@@ -26,13 +26,14 @@
 all: # hw-hex hw-s hw-c
 	make clean
 	make hw-hex.bin
-	make run-hex
+	make hw-s.bin
 
 hw-hex.bin : hw.hex
 	../../syseg/tools/hex2bin hw.hex hw-hex.bin
 
 hw-s.bin : hw.S
-	@echo "Edit this rule"
+	as --32 hw.S -o hw.o
+	ld -melf_i386 --oformat=binary -e begin -Ttext=0x7c00 hw.o -o hw-s.bin
 
 hw-c.bin : hw.c
 	@echo "Edit this line"
