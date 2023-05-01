@@ -39,10 +39,10 @@ hw-c.bin : hw.c
 
 ## Manually adding this rule to make my life easier
 
-run-hex : 
-	make hw-hex.bin
-	qemu-system-i386 -drive format=raw,file=hw-hex.bin -net none
-
+%.bin/run : %
+	make clean
+	make $@
+	qemu-system-i386 -drive format=raw,file=$< -net none
 
 hex2bin : hex2bin.c
 	gcc $< -o $@
