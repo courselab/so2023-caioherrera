@@ -3,6 +3,8 @@
 > 9008828 Caio Guimarães Herrera
 
 ## Bare Metal Hello World
+> Exercises solved on folder `./bare-metal-hw/`
+
 **a) Implement your own version of the hello world program in machine code.**
 
     Edit the file hw.hex using `syseg/eg/hw/eg-00.hex` as reference.
@@ -20,11 +22,15 @@
        You may need to add some extra code to satisfy idiosyncratic BIOSes.
        Consult the examples in `syseg/eg/hw`
 
+> Check files `./bare-metal-hw/hw.hex` and `./bare-metal-hw/hw-hex.bin`
+
 **b) Implement your own version of the hello world program in AT&T assembly.**
 
     Edit the hw.S using `syseg/eg/hw/eg-03.S` as reference.
 
     Repeat the tests mentioned in part (a).
+
+> Check files `./bare-metal-hw/hw.S` and `./bare-metal-hw/hw-s.bin`
 
 **c) Implement your own version of the hello world program in C.**
 
