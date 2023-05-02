@@ -27,6 +27,7 @@ all: # hw-hex hw-s hw-c
 	make clean
 	make hw-hex.bin
 	make hw-s.bin
+	make hw-c.bin
 
 hw-hex.bin : hw.hex
 	../../syseg/tools/hex2bin hw.hex hw-hex.bin
