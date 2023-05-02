@@ -1,6 +1,6 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10954576&assignment_repo_type=AssignmentRepo)
 # SO 2023 Projects
-> 9008828 Caio Guimarães Herrera
+> 9008828 Caio Herrera (caioherrera@usp.br)
 
 ## Bare Metal Hello World
 > Exercises solved on folder `./bare-metal-hw/`
