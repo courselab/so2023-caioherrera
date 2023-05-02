@@ -38,4 +38,4 @@
 
     Repeat the tests mentioned in part (a)	
 
-> Check files `./bare-metal-hw/hw.h`, `./bare-metal-hw/hw.c`, `./bare-metal-hw/hw_rt0.c`, `./bare-metal-hw/hw_utils.c` and ./bare-metal-hw/hw-c.bin`
+> Check files `./bare-metal-hw/hw.h`, `./bare-metal-hw/hw.c`, `./bare-metal-hw/hw_rt0.c`, `./bare-metal-hw/hw_utils.c` and `./bare-metal-hw/hw-c.bin`
