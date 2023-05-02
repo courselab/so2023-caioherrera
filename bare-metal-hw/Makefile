@@ -35,8 +35,9 @@ hw-s.bin : hw.S
 	as --32 hw.S -o hw.o
 	ld -melf_i386 --oformat=binary -e begin -Ttext=0x7c00 hw.o -o hw-s.bin
 
-hw-c.bin : hw.c
-	@echo "Edit this line"
+hw-c.bin : hw.c hw.ld hw_rt0.c hw_utils.c
+	gcc -m16 -O0 -I. -Wall -fno-pic -fcf-protection=none -c hw_rt0.c -o hw_rt0.o
+	gcc -m16 -O0 -I. -Wall -fno-pic -fcf-protection=none --freestanding -T hw.ld -Wl,--orphan-handling=discard hw.c hw_utils.c -o hw-c.bin
 
 ## Manually adding this rule to make my life easier
 
