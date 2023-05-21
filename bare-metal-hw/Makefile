@@ -25,12 +25,13 @@
 
 all: # hw-hex hw-s hw-c
 	make clean
+	make hex2bin
 	make hw-hex.bin
 	make hw-s.bin
 	make hw-c.bin
 
-hw-hex.bin : hw.hex
-	./tools/hex2bin hw.hex hw-hex.bin
+hw-hex.bin : hw.hex hex2bin
+	./hex2bin hw.hex hw-hex.bin
 
 hw-s.bin : hw.S
 	as --32 hw.S -o hw.o
