@@ -1,2 +1,6 @@
+#ifndef STDIO_H
+#define STDIO_H
+
 int __attribute__((fastcall, naked)) printf(const char* s);
-int __attribute__((naked)) main();
+
+#endif
