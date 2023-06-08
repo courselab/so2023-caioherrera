@@ -21,6 +21,7 @@ SECTIONS
 	.text2 :
 	{
 		stage2.o (.text .data .bss .rodata)
+		helper.o (.text .data .bss .rodata)
 	}
 
 	_STAGE2_SIZE = . - _STAGE2_ADDR;

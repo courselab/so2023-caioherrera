@@ -4,9 +4,9 @@ void __attribute__ ((naked)) load_stage2();
 
 int main()
 {
-	clear();
+	clrstr();
 
-	echo ("Stage 1 : loading second stage..." NL NL);
+	print ("Stage 1 : loading second stage..." NL NL);
 
 	load_stage2();
 

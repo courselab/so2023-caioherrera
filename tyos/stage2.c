@@ -1,8 +1,18 @@
-#include <utils.h>
+#include <helper.h>
 
 void __attribute__((naked)) init()
 {
-	echo ("Stage 2 : second stage loaded successfully." NL);
+	clear ();
+	
+	echo ("Hello, World! Welcome to TinyOS!" NL);
 
+	echo ("Please type your commands on the prompt below. (Max.: 10 characters)" NL);
+
+	echo ("> ");
+
+	char c = getchar();
+
+	putchar(c);
+	
 	system_halt();
 }

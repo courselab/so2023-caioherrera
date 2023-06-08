@@ -1,12 +1,15 @@
-boot_obj = stage1.o stage2.o utils.o
+boot_obj1 = stage1.o utils.o
+boot_obj2 = stage2.o helper.o
 
-boot.bin : $(boot_obj) boot.ld rt0.o
-	ld -melf_i386 --orphan-handling=discard -T boot.ld $(boot_obj) -o $@
+boot.bin : $(boot_obj1) $(boot_obj2) boot.ld rt0.o
+	ld -melf_i386 --orphan-handling=discard -T boot.ld $(boot_obj1) $(boot_obj2) -o $@
 
-stage1.o stage2.o utils.o :%.o: %.c
+stage1.o stage2.o utils.o helper.o :%.o: %.c
 	gcc -m16 -O0 -I. -Wall -fno-pic -fcf-protection=none --freestanding -c $< -o $@
 
-$(boot_obj) : utils.h
+$(boot_obj1) : utils.h
+
+$(boot_obj2) : helper.h
 
 rt0.o : rt0.S
 	gcc -m16 -O0 -Wall -c $< -o $@

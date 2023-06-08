@@ -1,6 +1,6 @@
 #include <utils.h>
 
-void __attribute__((fastcall, naked)) echo (const char* buffer)
+void __attribute__((fastcall, naked)) print (const char* buffer)
 {
 	__asm__
 	(
@@ -21,8 +21,8 @@ void __attribute__((fastcall, naked)) echo (const char* buffer)
 
 void __attribute__((fastcall, naked)) fatal (const char* msg)
 {
-	echo (msg);
-	echo (NL);
+	print (msg);
+	print (NL);
 
 	__asm__
 	(
@@ -32,7 +32,7 @@ void __attribute__((fastcall, naked)) fatal (const char* msg)
 	);
 }
 
-void __attribute__((fastcall, naked)) clear (void)
+void __attribute__((fastcall, naked)) clrstr (void)
 {
 	__asm__
 	(
@@ -45,7 +45,7 @@ void __attribute__((fastcall, naked)) clear (void)
 	);
 }
 
-void system_halt()
+void system_hlt()
 {
 	__asm__
 	(

@@ -3,6 +3,7 @@
 	.global _start
 	.global drive
 	.global size2
+	.global screen_pos
 
 _start:
 	jmp	code
@@ -33,3 +34,7 @@ drive:
 
 size2:
 	.byte	0x0
+
+screen_pos:
+	.word	0x00
+
